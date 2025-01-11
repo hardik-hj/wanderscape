@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your Type - Wanderscape</title>
+    <link rel="stylesheet" href="/static/css/tags.css">
+    <link rel="icon" href="/static/favicon.ico">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- Full jQuery -->
+    
+    <!-- Include noUiSlider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.3.1/dist/nouislider.min.css">
+
+    <!-- Include noUiSlider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@15.3.1/dist/nouislider.min.js"></script>
+</head>
+
+
+<body>
+    <div class="header">
+        <section class="title">
+            <h1>Welcome to <span class="brand-name">Wanderscape</span></h1>
+        </section>
+        <div class="navbar">
+            <ul>
+                <li><a onclick="navbar('home')">Home</a></li>
+                <li><a onclick="navbar('about')">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Ready to Choose Your Escape?</h2>
+        
+        <!-- City Search Bar -->
+        <input type="text" id="city-search" placeholder="Search for a city..." onkeyup="searchCities()">
+        
+        <!-- Display search results for city -->
+        <ul id="search-results"></ul>
+        <div id="data" data-value="{{tag}}"></div>
+
+        <!-- Budget Search Bar -->
+         <h2>Tight on Budget? No Worries. </h2>
+        <div class="budget-slider-container" id="city-search" >
+            <label for="budget-range">Select your max budget: <span id="budget-value">1000</span></label>
+            <input type="range" id="budget-range" min="1000" max="20000" step="1000" value="1000" oninput="updateBudgetValue(this.value)">
+        </div>
+        
+        <!-- Display search results for budget -->
+        <ul id="budget-results"></ul>
+    </div>
+
+    <script src="/static/scripts/tag.js"></script>
+
+    <script>
+        function updateBudgetValue(value) {
+            document.getElementById('budget-value').textContent = value + " INR";
+            fetchBudgetResults(value);  // Fetch budget-based search results
+        }
+
+        function fetchBudgetResults(budgetValue) {
+            $.get('/budget_search', { budget: budgetValue }, function(data) {
+                // Clear previous results
+                $('#budget-results').empty();
+
+                // Display the new search results
+                data.forEach(function(place) {
+                    const cityName = place.city;  // Assuming the place object has a 'city' field
+                    $('#budget-results').append(`<li><a href="/city/${encodeURIComponent(cityName)}">${place.sightseeing}</a></li>`);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

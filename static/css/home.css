@@ -1,0 +1,302 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #222; /* To make the text pop */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Video Background */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darken the video */
+    z-index: 0;
+}
+
+/* Header and Logo */
+header {
+    text-align: center;
+    padding-top: 10vh; /* Adjust for larger screens */
+    z-index: 2;
+    position: relative;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 8vw; /* Responsive font size based on screen width */
+    font-weight: 700;
+    color: #c2f7f2; /* Gold color */
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+/* Text Section */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+    width: 90%; /* Ensure it doesn't overflow */
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+/* Headline */
+.headline {
+    font-size: 7vw; /* Responsive size */
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+/* Description */
+.description {
+    font-size: 3vw; /* Responsive size */
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Explore Button */
+.explore-btn {
+    background-color: #76c7c0;
+    color: #000;
+    padding: 30px 30px;
+    font-size: 2vw; /* Scaled font size */
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.explore-btn:hover {
+    background-color: #75a7c0;
+    transform: scale(1.05);
+}
+
+/* Social Links */
+.social {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social li {
+    padding: 10px;
+}
+
+.social a {
+    color: #fff;
+    font-size: 2vw; /* Scaled font size for social links */
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social a:hover {
+    color: #f1c40f;
+}
+
+/* Responsive Design */
+
+/* Large Mobile (S24 Ultra and similar) */
+@media (max-width: 1440px) {
+    header {
+        padding-top: 15vh;
+    }
+
+    .logo {
+        font-size: 5vw;
+    }
+
+    .headline {
+        font-size: 7vw;
+    }
+
+    .description {
+        font-size: 3.5vw;
+    }
+
+    .explore-btn {
+        font-size: 2vw;
+        padding: 18px 35px;
+    }
+
+    .social {
+        bottom: 5%;
+        gap: 25px;
+    }
+
+    .social a {
+        font-size: 2.5vw;
+    }
+}
+
+/* Medium Screen (Tablets and Smaller Phones) */
+@media (max-width: 1024px) {
+    header {
+        padding-top: 12vh;
+    }
+
+    .logo {
+        font-size: 6vw;
+    }
+
+    .headline {
+        font-size: 8vw;
+    }
+
+    .description {
+        font-size: 4vw;
+    }
+
+    .explore-btn {
+        font-size: 2vw;
+        padding: 15px 30px;
+    }
+
+    .social a {
+        font-size: 3vw;
+    }
+}
+
+/* Small Screen (Regular Phones) */
+@media (max-width: 768px) {
+    header {
+        padding-top: 10vh;
+    }
+
+    .logo {
+        font-size: 7vw;
+    }
+
+    .headline {
+        font-size: 10vw;
+    }
+
+    .description {
+        font-size: 5vw;
+    }
+
+    .explore-btn {
+        font-size: 3vw;
+        padding: 14px 28px;
+    }
+
+    .social a {
+        font-size: 4vw;
+    }
+}
+
+/* Extra Small Screen (Smaller Mobile Devices) */
+@media (max-width: 480px) {
+    header {
+        padding-top: 8vh;
+    }
+
+    .logo {
+        font-size: 9vw;
+    }
+
+    .headline {
+        font-size: 12vw;
+    }
+
+    .description {
+        font-size: 6vw;
+    }
+
+    .explore-btn {
+        font-size: 4vw;
+        padding: 12px 24px;
+    }
+
+    .social a {
+        font-size: 5vw;
+    }
+}
+
+/* Large Screen (Desktop and Higher) */
+@media (min-width: 1441px) {
+    body {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 8rem; /* Fixed size for large screens */
+    }
+
+    .headline {
+        font-size: 4rem; /* Fixed size for large screens */
+    }
+
+    .description {
+        font-size: 1.5rem; /* Adjusted font size for description */
+        width: 70%; /* Adjust width to keep text from stretching too wide */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .explore-btn {
+        font-size: 2rem; /* Slightly bigger button on larger screens */
+        padding: 20px 40px;
+        margin-top: 10px;
+        box-shadow: 16px 16px 16px rgba(0.3, 0.3, 0.3, 0.4); /* Lifted effect with subtle shadow */
+        
+    }
+
+    .social a {
+        font-size: 1.5rem; /* Scaled down for large screens */
+    }
+
+    .social {
+        bottom: 3%;
+        gap: 30px;
+    }
+}

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: white;
+  font-size: 1.5em;
+  background: linear-gradient(160deg, #2b3e50 0%, #3d5866 100%);
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  font-weight: 300;
+  margin: 0;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h2 {
+  font-size: 2.2em;
+  text-transform: uppercase;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-weight: 200;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 500;
+  color: #ffdd00;
+  margin-top: 20px;
+  animation: fadeIn 2.2s ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+ul li {
+  font-size: 1.5em;
+  margin: 10px 0;
+  font-weight: 300;
+  animation: fadeIn 2s ease-in-out;
+  opacity: 0;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+ul li:nth-child(1) {
+  animation-delay: 1.2s;
+}
+
+ul li:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+ul li:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+ul li:nth-child(4) {
+  animation-delay: 1.8s;
+}
+
+.back {
+  background-color: #76c7c0;
+  color: #000;
+  padding: 15px 30px;
+  font-size: 2vw; /* Scaled font size */
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  margin-top: 20px;
+}
+
+.back:hover {
+  background-color: #75a7c0;
+  transform: scale(1.05);
+}
+
+/* Section Padding */
+section {
+  padding: 40px 20px;
+}
+
+section.intro {
+  background: #35495e;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+section.our-motive {
+  background: #3c5767;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+section.how-it-works {
+  background: #4a6d7c;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+section.our-team {
+  background: #2f4a5b;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+section.cta {
+  background: #3d5866;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.2em;
+  }
+
+  h1, h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.6em;
+  }
+
+  .back {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+}

@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    text-align: center;
+    padding: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: white;
+    font-size: 1.5em;
+    background: linear-gradient(160deg, #2b3e50 0%, #3d5866 100%);
+    overflow-x: hidden;
+    animation: bgAnim 5s ease-in-out infinite alternate;  /* Background animation */
+}
+
+@keyframes bgAnim {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 300;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 300;
+    margin: 0;
+    transform: translateY(-50px);
+    animation: slideInDown 2s ease-out forwards;
+    opacity: 0;
+    animation-delay: .2s;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+img {
+    width: 750px;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.slideshow-container {
+    position: relative;
+    margin: auto;
+    animation: fade 3s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Content Menu Styling */
+.content-menu {
+    margin: 0.1em;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f0f0f5, #e0e7eb);
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Flyout Menu Container */
+.flyout-menu {
+    padding: 1.2em;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+    background-color: #4fb5b5;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Flyout Menu */
+.flyout-menu:hover {
+    background-color: #36a09b;
+    transform: scale(1.05); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Flyout Menu Content */
+.content {
+    
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* Initially hidden */
+}
+
+/* Hover Effect on Flyout Menu for Content */
+.flyout-menu:hover .content {
+    opacity: 1;
+    max-height: 1000px; /* Ensure content reveals fully */
+    z-index: 1;
+    transform: translateY(0); /* Slide in from top */
+}
+
+/* Smooth Slide-Down Animation for Content */
+@keyframes slideInContent {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Trigger Slide-In Animation */
+.flyout-menu:hover .content {
+    animation: slideInContent 0.5s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-menu {
+        padding: 0.5em;
+    }
+
+    .flyout-menu {
+        font-size: 1rem; /* Smaller font size for mobile */
+        padding: 1em;  /* Reduced padding */
+    }
+
+    .content {
+        padding: 1em; /* Reduced padding */
+    }
+}
+
+
+.back {
+    display: inline;
+    font-size: 1em;
+    background: #76c7c0;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #000;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    animation: backButtonAnim 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes backButtonAnim {
+    0% {
+        background: #76c7c0;
+    }
+    100% {
+        background: #75a7c0;
+    }
+}
+
+.back:hover {
+    letter-spacing: 6px;
+}
+
+.button {
+    width: 460px;
+    height: 230px;
+    margin: 15px;
+    text-align: center;
+    line-height: 100px;
+    display: inline-block;
+    border-radius: 25px;
+    background: #ffdd00;
+    color: rgb(195, 195, 195);
+    font-size: 1.5em;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    border: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    min-width: 460px;
+    min-height: 230px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.brand-name {
+    color: #5bc0be; /* Soft turquoise/teal to contrast well with dark background */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes headerAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@keyframes navbarAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 1.2em;
+    position: relative;
+}
+
+
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #e6e6e6;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover {
+    background-color: #76c7c0;
+    color: #000;
+    transform: scale(1.1);
+}

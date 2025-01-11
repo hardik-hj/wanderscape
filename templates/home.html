@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to WanderScape</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="showcase">
+        <div class="video-container">
+            <video class="background-video" src="/static/explore/boat.mp4" muted loop autoplay poster="/static/explore/boat.jpg"></video>
+            <div class="overlay"></div>
+        </div>
+        <div class="text">
+            <h2 class="logo">WanderScape</h2>
+            <br><br>
+            <h3 class="headline">Explore the Wonders of the World</h3>
+            <p class="description">Discover amazing destinations, plan your trip, and immerse yourself in breathtaking experiences. WanderScape provides all the essential travel details to make your journey unforgettable.</p>
+            <br>
+            <a href="/tag" class="explore-btn">Start Your Adventure</a>
+        </div>
+        <ul class="social">
+            <li><a href="https://x.com/HardikJ0304"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/hardik-jain-659689215/"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/hardik-hj"><i class="fa fa-github"></i></a></li>
+        </ul>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const title = document.querySelector('.headline');
+            const scrollPosition = window.scrollY;
+            const opacity = Math.max(1 - scrollPosition / 500, 0); // Fade effect
+
+            title.style.opacity = opacity;
+        });
+    </script>
+</body>
+
+</html>
