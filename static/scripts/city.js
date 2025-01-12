@@ -68,11 +68,6 @@ for (var key in data) {
 }
 document.body.appendChild(divFlyout);
 
-var aBack = document.createElement('a');
-aBack.className = 'back';
-aBack.href = '/tag';
-aBack.textContent = 'Home';
-document.body.appendChild(aBack);
 
 var slideIndex = 0;
 showSlides();

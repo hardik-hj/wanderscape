@@ -21,7 +21,7 @@ body {
     }
 }
 h1 {
-    font-size: 2.5em;
+    font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
@@ -53,89 +53,115 @@ h2 {
     }
 }
 
-img {
-    width: 750px;
-    height: auto;
-}
-
 ul {
     list-style-type: none;
 }
 
+/* Base Styles for Images */
+img {
+    width: 100%; /* Makes images fully responsive */
+    height: 350px;
+    border-radius: 10px; /* Smoothly rounded corners */
+    box-shadow: 16px 16px 16px rgba(.2, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* Slideshow Container */
 .slideshow-container {
     position: relative;
     margin: auto;
+    max-width: 800px;
+    overflow: hidden; /* Ensures images do not overflow */
+    border-radius: 10px; /* Matches the image's rounded corners */
     animation: fade 3s ease-out forwards;
     opacity: 0;
     animation-delay: 0.2s;
 }
 
+/* Animation for slideshow container */
 @keyframes fade {
-    from {
-        opacity: 0;
-    }
     to {
         opacity: 1;
     }
 }
 
-.mySlides {
-    display: none;
+/* Individual Slide */
+.slide {
+    display: none; /* Hides all slides initially */
 }
+
+/* Active Slide */
+.slide.active {
+    display: block; /* Displays the active slide */
+    animation: slide-in 1s ease-in-out; /* Adds smooth entry animation */
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 
 /* Content Menu Styling */
 .content-menu {
-    margin: 0.1em;
+    margin: 0.2em 0; /* Adjusted for better spacing */
     padding: 0.5em 1em;
     border-radius: 10px;
-    background: linear-gradient(135deg, #f0f0f5, #e0e7eb);
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffffff, #f0f0f5); /* Softer colors */
+    color: #333333;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Reduced intensity for subtlety */
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9em; /* Adjusted font size */
+    line-height: 1.4; /* Better readability */
+    overflow: hidden;
 }
 
 /* Flyout Menu Container */
 .flyout-menu {
-    padding: 1.2em;
+    padding-bottom: 50px; /* Balanced padding */
     text-transform: uppercase;
-    position: relative;
+    
     cursor: pointer;
     text-align: left;
     font-weight: bold;
-    background-color: #4fb5b5;
+    background-color: #5bc0be;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+    color: white; /* Matches design */
+    font-size: 1em; /* Moderate size */
+    max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 /* Hover Effect on Flyout Menu */
 .flyout-menu:hover {
-    background-color: #36a09b;
-    transform: scale(1.05); 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-color: #489d99; /* Slightly darker for hover */
+    transform: scale(1.03); /* Subtle zoom */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Refined shadow */
+    max-height: fit-content;
 }
 
 /* Flyout Menu Content */
 .content {
-    
-    opacity: 0; /* Initially hidden */
-    max-height: 0; /* Initially hidden */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden; /* Ensure clean transition */
 }
 
 /* Hover Effect on Flyout Menu for Content */
 .flyout-menu:hover .content {
     opacity: 1;
-    max-height: 1000px; /* Ensure content reveals fully */
-    z-index: 1;
-    transform: translateY(0); /* Slide in from top */
+    max-height: 300px; /* Adjusted for smooth reveal */
 }
 
 /* Smooth Slide-Down Animation for Content */
 @keyframes slideInContent {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-10px); /* Softer slide */
     }
     to {
         opacity: 1;
@@ -145,78 +171,9 @@ ul {
 
 /* Trigger Slide-In Animation */
 .flyout-menu:hover .content {
-    animation: slideInContent 0.5s ease-out forwards;
+    animation: slideInContent 0.4s ease-out forwards; /* Faster and smoother */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content-menu {
-        padding: 0.5em;
-    }
-
-    .flyout-menu {
-        font-size: 1rem; /* Smaller font size for mobile */
-        padding: 1em;  /* Reduced padding */
-    }
-
-    .content {
-        padding: 1em; /* Reduced padding */
-    }
-}
-
-
-.back {
-    display: inline;
-    font-size: 1em;
-    background: #76c7c0;
-    padding: 15px 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #000;
-    border-radius: 50px;
-    letter-spacing: 2px;
-    transition: 0.2s;
-    animation: backButtonAnim 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes backButtonAnim {
-    0% {
-        background: #76c7c0;
-    }
-    100% {
-        background: #75a7c0;
-    }
-}
-
-.back:hover {
-    letter-spacing: 6px;
-}
-
-.button {
-    width: 460px;
-    height: 230px;
-    margin: 15px;
-    text-align: center;
-    line-height: 100px;
-    display: inline-block;
-    border-radius: 25px;
-    background: #ffdd00;
-    color: rgb(195, 195, 195);
-    font-size: 1.5em;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    border: none;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    min-width: 460px;
-    min-height: 230px;
-}
-
-.button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-}
 
 
 
@@ -273,7 +230,7 @@ ul {
 .navbar ul li {
     display: inline-block;
     margin-left: 20px;
-    font-size: 1.2em;
+    font-size: .9em;
     position: relative;
 }
 
@@ -297,4 +254,33 @@ ul {
     background-color: #76c7c0;
     color: #000;
     transform: scale(1.1);
+}
+
+.back {
+    background-color: #76c7c0;
+    color: #000;
+    padding: 15px 30px;
+    font-size: 0.9em; /* Scaled font size */
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+@keyframes backButtonAnim {
+    0% {
+        background: #76c7c0;
+    }
+    100% {
+        background: #75a7c0;
+    }
+}
+
+.back:hover {
+    background-color: #75a7c0;
+    
 }

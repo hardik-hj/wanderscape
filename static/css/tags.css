@@ -29,7 +29,7 @@ body {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
@@ -49,7 +49,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.2em;
+    font-size: 1.2em;
     margin-top: 20px;
     letter-spacing: 1px;
     font-weight: 200;
@@ -91,7 +91,6 @@ h2 {
     align-items: center;
     padding: 20px 5%;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
     animation: headerAnim 1.5s ease-in-out forwards;
 }
 
@@ -107,6 +106,7 @@ h2 {
 }
 
 .navbar {
+    font-size: 1em;
     display: flex;
     justify-content: flex-end;
     animation: navbarAnim 2s ease-in-out forwards;
@@ -132,8 +132,9 @@ h2 {
 .navbar ul li {
     display: inline-block;
     margin-left: 20px;
-    font-size: 1.2em;
+    font-size: .9em;
     position: relative;
+
 }
 
 
@@ -145,7 +146,7 @@ h2 {
 .navbar ul li a {
     text-decoration: none;
     color: #e6e6e6;
-    font-size: 1.2em;
+    font-size: .9em;
     padding: 8px 15px;
     border-radius: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -175,7 +176,7 @@ h2 {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: white;
     margin-top: 20px;
     opacity: 0;
@@ -250,7 +251,7 @@ h2 {
     
 }
 
-/* Add this in your tags.css */
+/*Search containers*/
 .search-container {
     text-align: center;
     margin: 20px 0;
@@ -305,7 +306,7 @@ h2 {
 }
 
 #city-search {
-    width: 70%;
+    width: 60%;
     padding: 18px 25px;
     font-size: 20px;
     border-radius: 50px;
@@ -546,7 +547,7 @@ h2 {
 /* Each Result Box */
 #budget-results li {
     width: calc(33% - 20px); /* 3 items per row */
-    background: rgba(255, 255, 255, 0.2); /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.721); /* Glassmorphism effect */
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 15px;
@@ -569,5 +570,5 @@ h2 {
 }
 
 #budget-results li a:hover {
-    color: #4CAF50;
+    color: rgba(255, 255, 255, 0.721);
 }
